@@ -1,0 +1,8 @@
+﻿/data/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+test_preprocess_quick.py
+PREPROCESSING_SUMMARY.md
+Grocry-Availability-Checker-And-Stock-Predictor/
