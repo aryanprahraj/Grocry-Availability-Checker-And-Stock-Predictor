@@ -2,7 +2,12 @@
 import pytest
 import pandas as pd
 import numpy as np
-from src.data.preprocess import preprocess_data
+
+
+def test_imports_work():
+    """Test that preprocessing imports work"""
+    from src.data.preprocess import preprocess_data
+    assert preprocess_data is not None
 
 
 @pytest.fixture
@@ -36,6 +41,7 @@ def sample_data():
 
 def test_preprocess_data_returns_correct_shapes(sample_data):
     """Test that preprocessing returns correct output shapes"""
+    from src.data.preprocess import preprocess_data
     train_df, test_df = sample_data
     X_train, y_train, X_test = preprocess_data(train_df, test_df, use_rfe=False)
     
@@ -46,6 +52,7 @@ def test_preprocess_data_returns_correct_shapes(sample_data):
 
 def test_preprocess_data_target_encoding(sample_data):
     """Test that target variable is properly encoded"""
+    from src.data.preprocess import preprocess_data
     train_df, test_df = sample_data
     X_train, y_train, X_test = preprocess_data(train_df, test_df, use_rfe=False)
     
