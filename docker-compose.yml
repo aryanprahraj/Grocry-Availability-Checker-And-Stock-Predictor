@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  grocery-predictor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: grocery-stock-predictor
+    volumes:
+      - ./data:/app/data
+      - ./saved_models:/app/saved_models
+      - ./notebooks:/app/notebooks
+    environment:
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    command: tail -f /dev/null  # Keep container running for development
+
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: grocery-jupyter
+    volumes:
+      - ./:/app
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
+    restart: unless-stopped
