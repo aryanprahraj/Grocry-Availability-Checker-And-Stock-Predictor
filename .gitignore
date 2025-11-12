@@ -207,6 +207,37 @@ marimo/_lsp/
 __marimo__/
 
 # Project specific
-test_preprocess_quick.py
 PREPROCESSING_SUMMARY.md
 Grocry-Availability-Checker-And-Stock-Predictor/
+
+# Data files (too large for git)
+data/*.csv
+data/*.parquet
+data/*.pickle
+
+# Model files (can be stored in Git LFS or cloud storage)
+saved_models/*.pkl
+saved_models/*.h5
+saved_models/*.pt
+saved_models/*.pth
+saved_models/*.joblib
+
+# Test coverage reports
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# CI/CD artifacts
+bandit-report.json
+pylint-report.txt
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# OS specific
+.DS_Store
+Thumbs.db
