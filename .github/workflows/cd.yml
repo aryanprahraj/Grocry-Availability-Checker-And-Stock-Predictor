@@ -55,7 +55,8 @@ jobs:
   build-and-push-docker:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    # Only run if Docker credentials are configured
+    if: github.ref == 'refs/heads/main' && vars.DOCKER_ENABLED == 'true'
     
     steps:
     - name: Checkout code
