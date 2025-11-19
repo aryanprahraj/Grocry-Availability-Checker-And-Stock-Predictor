@@ -1,14 +1,8 @@
 import pandas as pd
-import os
 
-# Paths to your data - handle both repo structure and parent directory
-# First check parent directory (current setup), then check repo data/ directory
-if os.path.exists("../data/Training_BOP.csv"):
-    TRAIN_PATH = "../data/Training_BOP.csv"
-    TEST_PATH = "../data/Testing_BOP.csv"
-else:
-    TRAIN_PATH = "data/Training_BOP.csv"
-    TEST_PATH = "data/Testing_BOP.csv"
+# Paths to your data
+TRAIN_PATH = "data/Training_BOP.csv"
+TEST_PATH = "data/Testing_BOP.csv"
 
 def load_train_test():
     """
